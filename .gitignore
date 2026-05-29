@@ -1,0 +1,36 @@
+# Environment & Config
+.env
+config/secrets.php
+
+# IDE & OS
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
+
+# PHP
+*.log
+composer.lock
+
+# Database
+*.sql.bak
+
+# Session & Cache
+/tmp/
+/cache/
+session/
+
+# Node (if added later)
+node_modules/
+package-lock.json
+yarn.lock
+
+# Misc
+.git/
+.gitattributes
+branch_structure.json
+temp_auto_push.bat
+temp_interactive_push.bat
+.gitignore

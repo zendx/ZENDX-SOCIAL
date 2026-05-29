@@ -1,11 +1,22 @@
 <?php
+// Load .env file if it exists
+if (file_exists(__DIR__ . '/.env')) {
+    $env_lines = file(__DIR__ . '/.env', FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
+    foreach ($env_lines as $line) {
+        if (strpos($line, '=') !== false && strpos($line, '#') !== 0) {
+            [$key, $value] = explode('=', $line, 2);
+            $_ENV[trim($key)] = trim($value);
+        }
+    }
+}
+
 session_start();
 
-// DB config - set these to match your environment
-define('DB_HOST', '127.0.0.1');
-define('DB_NAME', 'social_scheduler');
-define('DB_USER', 'root');
-define('DB_PASS', '');
+// Database configuration - support environment variables
+define('DB_HOST', $_ENV['DB_HOST'] ?? '127.0.0.1');
+define('DB_NAME', $_ENV['DB_NAME'] ?? 'social_scheduler');
+define('DB_USER', $_ENV['DB_USER'] ?? 'root');
+define('DB_PASS', $_ENV['DB_PASS'] ?? '');
 
 // load secrets
 $secrets = [];

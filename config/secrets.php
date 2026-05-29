@@ -1,9 +1,20 @@
 <?php
+/**
+ * This file is excluded from version control (.gitignore)
+ * Copy config/secrets.example.php to config/secrets.php
+ * Then add your actual OAuth credentials and SMTP settings
+ */
+
 return [
   'facebook' => [
-    'client_id' => '1504504320702865',
-    'client_secret' => '10ef79d69bd6a440a16e79dcbea0546d',
-    'redirect_uri' => 'https://facebook.com/providers/facebook_callback.php'
+    'client_id' => 'YOUR_FACEBOOK_APP_ID',
+    'client_secret' => 'YOUR_FACEBOOK_APP_SECRET',
+    'redirect_uri' => 'https://yourdomain.com/providers/facebook_callback.php'
+  ],
+  'instagram' => [
+    'client_id' => 'YOUR_INSTAGRAM_APP_ID',
+    'client_secret' => 'YOUR_INSTAGRAM_APP_SECRET',
+    'redirect_uri' => 'https://yourdomain.com/providers/instagram_callback.php'
   ],
   'linkedin' => [
     'client_id' => 'YOUR_LINKEDIN_CLIENT_ID',
@@ -22,11 +33,11 @@ return [
   ],
   'smtp' => [
     'host' => 'smtp.example.com',
-    'username' => 'you@example.com',
+    'username' => 'your_email@example.com',
     'password' => 'YOUR_SMTP_PASSWORD',
     'port' => 587,
     'encryption' => 'tls',
-    'from_email' => 'no-reply@yourdomain.com',
+    'from_email' => 'noreply@yourdomain.com',
     'from_name' => 'Social Scheduler'
   ]
 ];
